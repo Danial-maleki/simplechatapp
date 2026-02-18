@@ -22,7 +22,7 @@ cmake ..
 make
 ./tux-chat-server
 
-Client
+### Client
 
 cd client
 mkdir build && cd build
