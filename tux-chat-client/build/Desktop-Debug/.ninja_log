@@ -1,7 +1,0 @@
-# ninja log v6
-6	1372	1771421399328285726	tux-chat-client_autogen/timestamp	b50592d2839d0a61
-6	1372	1771421399328285726	tux-chat-client_autogen/mocs_compilation.cpp	b50592d2839d0a61
-6	1372	1771421399328285726	/home/danial/Documents/MY_CODES/qtprojects/tux-chat-client/build/Desktop-Debug/tux-chat-client_autogen/timestamp	b50592d2839d0a61
-6	1372	1771421399328285726	/home/danial/Documents/MY_CODES/qtprojects/tux-chat-client/build/Desktop-Debug/tux-chat-client_autogen/mocs_compilation.cpp	b50592d2839d0a61
-1375	8326	1771421399364288674	CMakeFiles/tux-chat-client.dir/tux-chat-client_autogen/mocs_compilation.cpp.o	559ed3fc1c11bfd1
-1384	8874	1771421399376289656	CMakeFiles/tux-chat-client.dir/main.cpp.o	95dc3d3586c4faf3
