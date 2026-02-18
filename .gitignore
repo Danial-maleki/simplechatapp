@@ -1,0 +1,34 @@
+# Compiled object files
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.app
+
+# Qt build files
+*.pro.user
+*.pro.user.*   # Qt Creator user-specific files
+*.qmake.stash
+*.qmake.cache
+Makefile
+*.moc
+*.qrc
+*.ui.h
+
+# Build directories
+build-*/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
