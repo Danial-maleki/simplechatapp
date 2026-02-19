@@ -1,0 +1,5 @@
+/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/tux-chat-client.dir
+/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/tux-chat-client_autogen_timestamp_deps.dir
+/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/tux-chat-client_autogen.dir

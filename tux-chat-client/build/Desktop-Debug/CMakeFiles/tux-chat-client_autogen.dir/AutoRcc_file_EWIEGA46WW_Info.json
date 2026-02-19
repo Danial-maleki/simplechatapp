@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/tux-chat-client_autogen",
+	"CMAKE_BINARY_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client",
+	"CMAKE_SOURCE_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/tux-chat-client_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/danial/Desktop/git/simplechatapp/tux-chat-client/styles/style.css"
+	],
+	"LOCK_FILE" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/tux-chat-client_autogen.dir/AutoRcc_file_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "file" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_file.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/build/Desktop-Debug/CMakeFiles/tux-chat-client_autogen.dir/AutoRcc_file_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/danial/Desktop/git/simplechatapp/tux-chat-client/file.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

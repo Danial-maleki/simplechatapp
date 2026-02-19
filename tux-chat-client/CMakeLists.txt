@@ -9,8 +9,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Network)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network)
+
+find_package(Qt5 REQUIRED COMPONENTS Widgets Network Sql)
 
 set(SOURCES
     main.cpp
@@ -19,9 +19,10 @@ set(SOURCES
     mainwindow.ui
 )
 
-add_executable(tux-chat-client ${SOURCES})
+add_executable(tux-chat-client ${SOURCES} file.qrc)
 
 target_link_libraries(tux-chat-client PRIVATE
-    Qt${QT_VERSION_MAJOR}::Widgets
-    Qt${QT_VERSION_MAJOR}::Network
+    Qt5::Widgets
+    Qt5::Network
+    Qt5::Sql
 )

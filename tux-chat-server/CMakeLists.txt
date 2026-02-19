@@ -9,7 +9,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Network Widgets)
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core Network Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network Widgets)
 
 set(SOURCES
@@ -21,7 +21,8 @@ set(SOURCES
     server.h
 )
 
-add_executable(tux-chat-server ${SOURCES})
+add_executable(tux-chat-server ${SOURCES}
+    resources.qrc)
 
 target_link_libraries(tux-chat-server PRIVATE
     Qt${QT_VERSION_MAJOR}::Core

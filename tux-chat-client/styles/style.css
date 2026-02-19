@@ -1,0 +1,124 @@
+/* ---------------------------
+   Main Window / Central Widget
+---------------------------- */
+QWidget#centralwidget, QWidget#layoutWidget {
+    background-color: #1e1e2f;  /* تیره و مدرن */
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #f0f0f0;
+}
+
+/* ---------------------------
+   Labels
+---------------------------- */
+QLabel {
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* ---------------------------
+   LineEdits (Server, Port, Message)
+---------------------------- */
+QLineEdit {
+    border: 2px solid #555555;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: #2c2c3c;
+    color: #f0f0f0;
+    selection-background-color: #0078d7;
+}
+
+/* ---------------------------
+   Buttons
+---------------------------- */
+QPushButton#btnSend {
+    background-color: #28a745;  /* سبز */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#btnSend:hover {
+    background-color: #218838;
+}
+QPushButton#btnSend:pressed {
+    background-color: #1e7e34;
+}
+
+QPushButton#btnClose {
+    background-color: #dc3545; /* قرمز */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#btnClose:hover {
+    background-color: #c82333;
+}
+QPushButton#btnClose:pressed {
+    background-color: #bd2130;
+}
+
+QPushButton#pushButton {  /* Connect */
+    background-color: #007bff; /* آبی */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#pushButton:hover {
+    background-color: #0069d9;
+}
+QPushButton#pushButton:pressed {
+    background-color: #0056b3;
+}
+
+QPushButton#pushButton_2 {  /* Disconnect */
+    background-color: #6c757d; /* خاکستری */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#pushButton_2:hover {
+    background-color: #5a6268;
+}
+QPushButton#pushButton_2:pressed {
+    background-color: #4e555b;
+}
+
+/* ---------------------------
+   Chat List
+---------------------------- */
+QListView#listView {
+    background-color: #2c2c3c;
+    border: 2px solid #555555;
+    border-radius: 8px;
+    padding: 6px;
+    color: #f0f0f0;
+}
+
+/* ---------------------------
+   Scrollbar
+---------------------------- */
+QScrollBar:vertical {
+    border: none;
+    background: #2c2c3c;
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #555555;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #888888;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    height: 0px;
+    subcontrol-origin: margin;
+}

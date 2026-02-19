@@ -9,6 +9,13 @@
 #include <QAbstractSocket>
 #include <QRandomGenerator>
 #include <QInputDialog>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QPluginLoader>
+#include <QVariant>
+#include <QtSql/QSqlDatabase>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -37,5 +44,7 @@ private:
     QStringList m_list;
     QStringListModel m_model;
     QString m_name;
+    QString m_message;
+    QSqlDatabase m_db;
 };
 #endif // MAINWINDOW_H

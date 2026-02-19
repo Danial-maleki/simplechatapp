@@ -1,0 +1,111 @@
+/* ---------------------------
+   Dialog Background
+---------------------------- */
+QDialog#Dialog {
+    background-color: #1f1f2e; /* رنگ تیره مدرن */
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #f0f0f0;
+}
+
+/* ---------------------------
+   Labels
+---------------------------- */
+QLabel {
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* ---------------------------
+   LineEdits
+---------------------------- */
+QLineEdit#txtMessage {
+    border: 2px solid #555555;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: #2c2c3c;
+    color: #f0f0f0;
+    selection-background-color: #0078d7;
+}
+
+/* ---------------------------
+   SpinBox (Port)
+---------------------------- */
+QSpinBox#spport {
+    border: 2px solid #555555;
+    border-radius: 6px;
+    padding: 4px 8px;
+    background-color: #2c2c3c;
+    color: #f0f0f0;
+}
+
+/* ---------------------------
+   Buttons
+---------------------------- */
+QPushButton#btnStart {
+    background-color: #28a745; /* سبز */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#btnStart:hover {
+    background-color: #218838;
+}
+QPushButton#btnStart:pressed {
+    background-color: #1e7e34;
+}
+
+QPushButton#btnStop {
+    background-color: #dc3545; /* قرمز */
+    color: white;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+QPushButton#btnStop:hover {
+    background-color: #c82333;
+}
+QPushButton#btnStop:pressed {
+    background-color: #bd2130;
+}
+
+/* ---------------------------
+   Status Label
+---------------------------- */
+QLabel#lblstatus {
+    color: #ffcc00; /* رنگ زرد برای وضعیت */
+    font-weight: bold;
+}
+
+/* ---------------------------
+   Splitters
+---------------------------- */
+QSplitter {
+    background-color: transparent;
+}
+
+/* ---------------------------
+   Scrollbar (در صورت استفاده)
+---------------------------- */
+QScrollBar:vertical {
+    border: none;
+    background: #2c2c3c;
+    width: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #555555;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #888888;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    height: 0px;
+    subcontrol-origin: margin;
+}

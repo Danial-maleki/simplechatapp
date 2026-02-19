@@ -1,23 +1,34 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->lblID->setText("ID: Not Connected");
-
-    connect(&m_socket,&QTcpSocket::connected,this,&MainWindow::connected);
-    connect(&m_socket,&QTcpSocket::disconnected,this,&MainWindow::disconnected);
-    connect(&m_socket,&QTcpSocket::readyRead,this,&MainWindow::readyread);
-    connect(&m_socket,QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error),this,&MainWindow::error);
-    ui->pushButton->setEnabled(true);
-    ui->pushButton_2->setEnabled(false);
-    ui->btnSend->setEnabled(false);
     ui->listView->setModel(&m_model);
 
+    connect(&m_socket, &QTcpSocket::connected, this, &MainWindow::connected);
+    connect(&m_socket, &QTcpSocket::disconnected, this, &MainWindow::disconnected);
+    connect(&m_socket, &QTcpSocket::readyRead, this, &MainWindow::readyread);
+    connect(&m_socket,
+            QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error),
+            this,
+            &MainWindow::error);
+
+    // 🔹 PostgreSQL connection
+    m_db = QSqlDatabase::addDatabase("QPSQL");
+    m_db.setHostName("127.0.0.1");
+    m_db.setPort(5432);
+    m_db.setDatabaseName("danialdb");
+    m_db.setUserName("danial");
+    m_db.setPassword("danial123");
+
+    if (!m_db.open()) {
+        qDebug() << "DB ERROR:" << m_db.lastError().text();
+    } else {
+        qDebug() << "Database connected successfully";
+    }
 }
 
 MainWindow::~MainWindow()
@@ -65,16 +76,38 @@ void MainWindow::on_pushButton_2_clicked()//btn disconnect
 
 void MainWindow::on_btnSend_clicked()//btn send
 {
-    if(!m_socket.isOpen())return;
+    if(!m_socket.isOpen()) return;
+
+    QString msg = ui->txtMessage->text().trimmed();
+    if(msg.isEmpty()) return;
 
     QByteArray data;
     data.append(m_name);
-    data.append(QString(" "));
-    data.append(ui->txtMessage->text());
-
+    data.append(" ");
+    data.append(msg);
     m_socket.write(data);
-    ui->txtMessage->setText(QString());
 
+
+
+    if (msg.isEmpty())
+        return;
+
+    if (!m_db.isOpen()) {
+        qDebug() << "DB not open";
+        return;
+    }
+
+    QSqlQuery query(m_db);
+
+    QString sql = QString("INSERT INTO users (name, msg) ""VALUES ('%1', '%2')").arg(m_name, msg.replace("'", "''"));
+
+    if (!query.exec(sql)) {
+        qDebug()<<"Insert error:"<<query.lastError().text();
+    } else {
+        qDebug() << "Message saved to DB";
+    }
+
+    ui->txtMessage->clear();
 }
 
 void MainWindow::connected()
@@ -83,11 +116,11 @@ void MainWindow::connected()
     ui->pushButton->setEnabled(false);
     ui->pushButton_2->setEnabled(true);
     ui->btnSend->setEnabled(true);
-    int randomId = QRandomGenerator::global()->bounded(1000, 9999);
+    int randomId=QRandomGenerator::global()->bounded(1000,9999);
         ui->lblID->setText(QString("ID: %1").arg(randomId));
         m_list.append(QString("Connected! Your ID: %1").arg(randomId));
         m_model.setStringList(m_list);
-    //ui->lblID->setText(QString("ID: %1").arg(m_socket.socketDescriptor()));
+
 }
 
 void MainWindow::disconnected()
